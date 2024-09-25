@@ -1,12 +1,16 @@
 package org.example;
 
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        // Заданное предложение
-        String inputText = "Съешь ещё этих французских булок и галет, да выпей же чаю с молоком, как и я.".toLowerCase();
+        Scanner scanner = new Scanner(System.in);
+
+        // Ввод текста пользователем
+        System.out.print("Введите текст: ");
+        String inputText = scanner.nextLine().toLowerCase();
 
         // Определяем множество для всех букв русского алфавита
         Set<Character> alphabet = new HashSet<>();
@@ -24,6 +28,9 @@ public class Main {
             System.out.println("Текст содержит все буквы русского алфавита.");
         } else {
             System.out.println("Текст НЕ содержит все буквы русского алфавита.");
+            System.out.println("Не хватает следующих букв: " + alphabet);
         }
+
+        scanner.close();
     }
 }
